@@ -9,12 +9,12 @@ describe("Test ItemBuilder", () => {
     // @ts-expect-error
     const invalidRecipe = {
         length: 6,
-        characterSets: new Set(["adfioadhfg"]),
+        characterSets: ["adfioadhfg"],
     } as GeneratorRecipe;
 
     const validRecipe = {
         length: 6,
-        characterSets: new Set([GeneratorRecipe.CharacterSetsEnum.Digits]),
+        characterSets: [GeneratorRecipe.CharacterSetsEnum.Digits],
     } as GeneratorRecipe;
 
     test("Create Item with minimum required fields", () => {
@@ -188,7 +188,7 @@ describe("Test ItemBuilder", () => {
         const fieldSectionName = "Test Section";
 
         const item = new ItemBuilder()
-            .setCategory(CategoryEnum.Login) 
+            .setCategory(CategoryEnum.Login)
             .addField({value: "MySecret", sectionName: fieldSectionName})
             .build();
 

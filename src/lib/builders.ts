@@ -200,7 +200,7 @@ export class ItemBuilder {
         this.item.category = category as FullItem.CategoryEnum;
         return this;
     }
-    
+
     /**
      * Creates a new Item Section if it does not exist. Otherwise, return the previously-created
      * Item Section.
@@ -236,14 +236,14 @@ export class ItemBuilder {
  * @returns {boolean}
  */
 const validRecipe = (recipe: GeneratorRecipe): boolean => {
-    if (!recipe.characterSets || !recipe.characterSets.size) return true;
+    if (!recipe.characterSets || !recipe.characterSets.length) return true;
 
     const allowedCharactersSets = Object.values(
         GeneratorRecipe.CharacterSetsEnum,
     );
 
     // User provided more character sets than are defined
-    if (recipe.characterSets.size > allowedCharactersSets.length) return false;
+    if (recipe.characterSets.length > allowedCharactersSets.length) return false;
 
     for (const cs of recipe.characterSets) {
         if (allowedCharactersSets.indexOf(cs) === -1) {

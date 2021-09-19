@@ -18,7 +18,7 @@ export class GeneratorRecipe {
     * Length of the generated value
     */
     'length'?: number;
-    'characterSets'?: Set<GeneratorRecipe.CharacterSetsEnum>;
+    'characterSets'?: GeneratorRecipe.CharacterSetsEnum[];
 
     static discriminator: string | undefined = undefined;
 

@@ -151,3 +151,5 @@ class OPConnect {
         return;
     }
 }
+
+export type { OPConnect }
